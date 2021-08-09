@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
 import Header from './components/Header'
+import Characters from './components/Characters';
 function App() {
   const [items,setItems]=useState([]);
   const [isLoading,setIsLoading]=useState(true);
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
      <Header/>
+     <Characters isLoading={isLoading} items={items}/>
     </div>
   );
 }
