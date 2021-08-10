@@ -1,30 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import axios from "axios";
-import Header from "./components/Header";
-import Search from "./components/Search";
-import Characters from "./components/Characters";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import ErrorPage from "./components/ErrorPage";
+import Home from "./components/Home";
 function App() {
-  const [items, setItems] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [query, setQuery] = useState("");
-  useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `https://www.breakingbadapi.com/api/characters?name=${query}`
-      );
 
-      setItems(result.data);
-      setIsLoading(false);
-    };
-    fetchItems();
-  }, [query]);
   return (
-    <div className="App">
-      <Header />
-      <Search getQuery={(q) => setQuery(q)} />
-      <Characters isLoading={isLoading} items={items} />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route component={ErrorPage} />
+      </Switch>
+    </Router>
   );
 }
 
