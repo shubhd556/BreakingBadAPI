@@ -1,9 +1,8 @@
 import React from 'react'
-import logo from '../img/logo.png'
-const  Header=()=> {
+const Header = () => {
     return (
         <header className='center'>
-            <img src={logo} alt="" />
+            <h1 className="Title">The <strong className="badword">B</strong>reaking <strong className="badword">B</strong>ad API</h1>
         </header>
     )
 }
