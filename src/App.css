@@ -202,13 +202,19 @@ input[type="text"] {
     justify-content: center;
 }
 
+.activepagination > a{
+    background-color: rgb(72, 127, 90) ;
+    border-color: #ffffff ;
+    color: rgb(255, 255, 255)!important;
+  }
+
 .paginationBtn a {
     padding: 10px;
     /* margin: 0px; */
     margin-left: 7px;
     border-radius: 5px;
     border: 1px solid rgb(72, 127, 90);
-    color: rgb(72, 127, 90);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 .paginationBtn a:hover {
